@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f6f8;
+    margin-top: 30px;
+}
+
+/* ===== 标题 ===== */
+h1 {
+    color: #333;
+}
+
+/* ===== 通用按钮 ===== */
+button {
+    cursor: pointer;
+}
+
+.unit-btn {
+    display: block;
+    width: 220px;
+    margin: 12px auto;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+}
+
+.unit-btn:hover {
+    background-color: #1976D2;
+}
+
+/* ===== 顶部按钮 ===== */
+#top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 15px 0 25px;
+}
+
+.top-btn {
+    width: 240px;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+}
+
+/* ===== 单词显示 ===== */
+#word-box {
+    font-size: 80px;
+    font-weight: 800;
+    margin: 40px 0;
+    letter-spacing: 6px;
+}
+
+#pinyin-box {
+    font-size: 32px;
+    color: #555;
+}
+
+#meaning-box {
+    font-size: 26px;
+    color: #666;
+}
+
+/* ===== 正确 / 错误按钮 ===== */
+#judge-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* ⭐ 缩小间距 */
+    margin-top: 40px;
+}
+
+.big-btn {
+    width: 380px;
+    font-size: 28px;
+    padding: 26px 0;
+}
+
+/* ===== Listening 控制 ===== */
+#listen-box {
+    margin: 20px 0;
+}
+
+/* ===== 错误词列表 ===== */
+.wrong-title {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #333;
+}
+
+.wrong-word {
+    font-size: 30px;
+    margin: 10px;
+    cursor: pointer;
+    color: #1976D2;
+}
+
+/* ===== 水印 ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+
+    opacity: 0.8;
+    background-image: url("./watermark.png"); /* ⭐ 水印图片 */
+    background-repeat: no-repeat;
+    background-position: left 16px top 16px;
+    background-size: 160px 160px;
+}
+
+.speak-once-btn{
+    background:#facc15;          /* 黄 */
+    color:#111827;
+}
+
+.speak-once-btn:hover{
+    background:#eab308;         /* 深黄 */
+}
+
+#watermark{
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    width: 180px;      /* 自己调大小 */
+    opacity: 0.8;     /* 透明度 */
+    z-index: 9999;     /* 保证在最上层 */
+    pointer-events: none; /* 不挡按钮点击 */
+}
