@@ -14,7 +14,7 @@ async function loadScript(src) {
 
 async function initApp() {
   const params = new URLSearchParams(location.search);
-  const student = params.get("student") || "chrystel";
+  const student = params.get("student") || "Chrystel";
 
   // 如果你文件夹就叫这个（不推荐括号，但先按你现状写）
   const src = `./Student/${encodeURIComponent(student)}.js`;
