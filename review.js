@@ -1,3 +1,5 @@
+const container = document.getElementById("unit-container");
+
 let units = []; // 由学生数据文件提供
 
 async function loadScript(src) {
@@ -12,24 +14,25 @@ async function loadScript(src) {
 
 async function initApp() {
   const params = new URLSearchParams(location.search);
-  const student = params.get("student") || "chrystel"; // 默认打开谁就写谁
-  const src = `./Student_words_data(JS)/${encodeURIComponent(student)}.js`;
+  const student = params.get("student") || "chrystel";
+
+  // 如果你文件夹就叫这个（不推荐括号，但先按你现状写）
+  const src = `./Student/${encodeURIComponent(student)}.js`;
 
   await loadScript(src);
 
+  // 你的学生数据文件里必须是：window.UNITS = [...]
   if (!Array.isArray(window.UNITS)) {
     throw new Error("window.UNITS not found in " + src);
   }
-  units = window.UNITS;
 
+  units = window.UNITS;
   showUnitSelection();
 }
 
 initApp().catch((e) => {
   container.innerHTML = `<h2>Data load failed</h2><div>${e.message}</div>`;
 });
-
-const container = document.getElementById("unit-container");
 
 let currentUnit = null;
 let currentIndex = 0;
